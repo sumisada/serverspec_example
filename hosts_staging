@@ -1,0 +1,41 @@
+---
+shared_settings:
+  :ssh_opts:
+    :user: root
+    :keys: /home/sumisada/.ssh/id_rsa
+    :port: 22
+web:
+  :hosts:
+    - 192.168.250.151
+    - 192.168.1.12
+  :roles:
+    - common
+    - group
+    - user/system
+    - user/web
+    - fluentd
+    - mackerel-agent
+    - nagios/nrpe
+    - nginx
+db:
+  :hosts:
+    - 192.168.1.31
+  :roles:
+    - common
+    - group
+    - user/system
+    - user/db
+    - fluentd
+    - mackerel-agent
+    - nagios/nrpe
+press:
+  :hosts:
+    - 192.168.1.21
+  :roles:
+    - common
+    - group
+    - user/system
+    - user/press
+    - mackerel-agent
+    - nagios/nrpe
+    - nagios/server
